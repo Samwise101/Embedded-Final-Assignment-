@@ -1,0 +1,46 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.794271",
+   "Default View_TopLeft":"1,-203",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 1030 -y 460 -defaultsOSRD
+preplace inst rst_ps8_0_100M -pg 1 -lvl 2 -x 550 -y 660 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 550 -y 460 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1400 -y 480 -defaultsOSRD
+preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 5 -x 1770 -y 560 -defaultsOSRD
+preplace inst nn_ctrl_0 -pg 1 -lvl 4 -x 1400 -y 180 -defaultsOSRD
+preplace inst fix_address_0 -pg 1 -lvl 3 -x 1030 -y 310 -defaultsOSRD
+preplace inst not_gate_0 -pg 1 -lvl 1 -x 110 -y 300 -defaultsOSRD
+preplace inst nn_inference_0 -pg 1 -lvl 2 -x 550 -y 250 -defaultsOSRD
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 3 880 550 1210 620 NJ
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 4 230 550 870 540 1190 400 1590
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 1 2 240 560 860
+preplace netloc nn_ctrl_0_o_BRAM_ce 1 4 1 1610 230n
+preplace netloc fix_address_0_addr_out 1 3 1 1200 210n
+preplace netloc not_gate_0_o_out 1 1 1 NJ 300
+preplace netloc nn_ctrl_0_ap_rst 1 0 5 20 20 NJ 20 NJ 20 NJ 20 1590
+preplace netloc axi_bram_ctrl_0_bram_doutb 1 1 4 200 10 NJ 10 NJ 10 1620J
+preplace netloc nn_inference_0_input_img_ce0 1 2 2 NJ 230 N
+preplace netloc nn_inference_0_ap_return 1 2 2 NJ 250 N
+preplace netloc axi_bram_ctrl_0_bram_rstb_busy 1 3 3 1210 330 NJ 330 1900
+preplace netloc nn_inference_0_input_img_address0 1 2 1 860J 270n
+preplace netloc nn_ctrl_0_ap_start 1 1 4 210 30 NJ 30 NJ 30 1580
+preplace netloc nn_inference_0_ap_done 1 1 3 220 100 NJ 100 1210J
+preplace netloc nn_inference_0_ap_idle 1 1 3 230 110 NJ 110 1180J
+preplace netloc nn_inference_0_ap_ready 1 1 3 240 120 NJ 120 1200J
+preplace netloc nn_ctrl_0_o_BRAM_wr 1 4 1 1580 250n
+preplace netloc nn_ctrl_0_o_BRAM_din 1 4 1 1600 270n
+preplace netloc nn_ctrl_0_o_BRAM_addr 1 4 1 1630 210n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 N 480
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 2 1 N 440
+preplace netloc axi_smc_M00_AXI 1 3 1 N 460
+levelinfo -pg 1 0 110 550 1030 1400 1770 1920
+pagesize -pg 1 -db -bbox -sgen 0 0 1920 760
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_bram_cntlr_cnt":"2"
+}

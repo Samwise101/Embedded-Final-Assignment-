@@ -1,0 +1,732 @@
+
+*** Running vivado
+    with args -log u96v2_sbc_mp4d_nn_inference_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source u96v2_sbc_mp4d_nn_inference_0_1.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source u96v2_sbc_mp4d_nn_inference_0_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/tools/Xilinx/MPSoC4Drones/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top u96v2_sbc_mp4d_nn_inference_0_1 -part xczu3eg-sbva484-1-i -mode out_of_context
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'u96v2_sbc_mp4d_nn_inference_0_1' is locked:
+* IP definition 'Nn_inference (1.0)' for IP 'u96v2_sbc_mp4d_nn_inference_0_1' (customized with software release 2020.2) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 465858
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 2707.430 ; gain = 29.906 ; free physical = 2638 ; free virtual = 13054
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'u96v2_sbc_mp4d_nn_inference_0_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_inference_0_1/synth/u96v2_sbc_mp4d_nn_inference_0_1.vhd:71]
+INFO: [Synth 8-3491] module 'nn_inference' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:12' bound to instance 'U0' of component 'nn_inference' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_inference_0_1/synth/u96v2_sbc_mp4d_nn_inference_0_1.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'nn_inference' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:27]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 100 - type: integer 
+	Parameter AddressWidth bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_fp_input_img_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:92' bound to instance 'fp_input_img_V_U' of component 'nn_inference_fp_input_img_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:709]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_fp_input_img_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:110]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 100 - type: integer 
+	Parameter AddressWidth bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_fp_input_img_V_ram' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:10' bound to instance 'nn_inference_fp_input_img_V_ram_U' of component 'nn_inference_fp_input_img_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_fp_input_img_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:30]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 7 - type: integer 
+	Parameter MEM_SIZE bound to: 100 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_fp_input_img_V_ram' (1#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_fp_input_img_V' (2#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd:110]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 64 - type: integer 
+	Parameter AddressWidth bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output_0_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:97' bound to instance 'temp_output_0_V_U' of component 'nn_inference_temp_output_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:726]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 64 - type: integer 
+	Parameter AddressWidth bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output_0_V_ram' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:10' bound to instance 'nn_inference_temp_output_0_V_ram_U' of component 'nn_inference_temp_output_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:32]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter MEM_SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output_0_V_ram' (3#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output_0_V' (4#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output2_0_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:97' bound to instance 'temp_output2_0_V_U' of component 'nn_inference_temp_output2_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:745]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output2_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output2_0_V_ram' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:10' bound to instance 'nn_inference_temp_output2_0_V_ram_U' of component 'nn_inference_temp_output2_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output2_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:32]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output2_0_V_ram' (5#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output2_0_V' (6#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output3_0_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:97' bound to instance 'temp_output3_0_V_U' of component 'nn_inference_temp_output3_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:764]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output3_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output3_0_V_ram' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:10' bound to instance 'nn_inference_temp_output3_0_V_ram_U' of component 'nn_inference_temp_output3_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output3_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:32]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output3_0_V_ram' (7#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output3_0_V' (8#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd:117]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 10 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output4_0_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:92' bound to instance 'temp_output4_0_V_U' of component 'nn_inference_temp_output4_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:783]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output4_0_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:110]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 10 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_temp_output4_0_V_ram' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:10' bound to instance 'nn_inference_temp_output4_0_V_ram_U' of component 'nn_inference_temp_output4_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_temp_output4_0_V_ram' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:30]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output4_0_V_ram' (9#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_temp_output4_0_V' (10#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd:110]
+INFO: [Synth 8-3491] module 'nn_inference_hw_act_layer1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer1.vhd:12' bound to instance 'grp_hw_act_layer1_fu_304' of component 'nn_inference_hw_act_layer1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:800]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hw_act_layer1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer1.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hw_act_layer1' (11#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer1.vhd:38]
+INFO: [Synth 8-3491] module 'nn_inference_hw_act_layer2' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer2.vhd:12' bound to instance 'grp_hw_act_layer2_fu_309' of component 'nn_inference_hw_act_layer2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:824]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hw_act_layer2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer2.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hw_act_layer2' (12#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer2.vhd:38]
+INFO: [Synth 8-3491] module 'nn_inference_hw_act_layer3' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer3.vhd:12' bound to instance 'grp_hw_act_layer3_fu_314' of component 'nn_inference_hw_act_layer3' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:848]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hw_act_layer3' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer3.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hw_act_layer3' (13#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer3.vhd:38]
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:12' bound to instance 'grp_hwmm_layer1_fu_319' of component 'nn_inference_hwmm_layer1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:872]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:33]
+	Parameter DataWidth bound to: 10 - type: integer 
+	Parameter AddressRange bound to: 6400 - type: integer 
+	Parameter AddressWidth bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer1_weights_layer1_weights_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:1669' bound to instance 'weights_layer1_weights_V_U' of component 'nn_inference_hwmm_layer1_weights_layer1_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:298]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer1_weights_layer1_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:1685]
+	Parameter DataWidth bound to: 10 - type: integer 
+	Parameter AddressRange bound to: 6400 - type: integer 
+	Parameter AddressWidth bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer1_weights_layer1_weights_V_rom' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:9' bound to instance 'nn_inference_hwmm_layer1_weights_layer1_weights_V_rom_U' of component 'nn_inference_hwmm_layer1_weights_layer1_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:1700]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer1_weights_layer1_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:27]
+	Parameter DWIDTH bound to: 10 - type: integer 
+	Parameter AWIDTH bound to: 13 - type: integer 
+	Parameter MEM_SIZE bound to: 6400 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer1_weights_layer1_weights_V_rom' (14#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer1_weights_layer1_weights_V' (15#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd:1685]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U1' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:313]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1_Multiplier_0' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:10' bound to instance 'nn_inference_mul_10s_32s_40_1_1_Multiplier_0_U' of component 'nn_inference_mul_10s_32s_40_1_1_Multiplier_0' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_10s_32s_40_1_1_Multiplier_0' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_10s_32s_40_1_1_Multiplier_0' (16#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_10s_32s_40_1_1' (17#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U2' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:325]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U3' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:337]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U4' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:349]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U5' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:361]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U6' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:373]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U7' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:385]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_10s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd:28' bound to instance 'mul_10s_32s_40_1_1_U8' of component 'nn_inference_mul_10s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer1' (18#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd:33]
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer4' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:12' bound to instance 'grp_hwmm_layer4_fu_327' of component 'nn_inference_hwmm_layer4' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:891]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer4' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:33]
+	Parameter DataWidth bound to: 12 - type: integer 
+	Parameter AddressRange bound to: 160 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer4_weights_layer4_weights_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:133' bound to instance 'weights_layer4_weights_V_U' of component 'nn_inference_hwmm_layer4_weights_layer4_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:339]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer4_weights_layer4_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:149]
+	Parameter DataWidth bound to: 12 - type: integer 
+	Parameter AddressRange bound to: 160 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer4_weights_layer4_weights_V_rom' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:9' bound to instance 'nn_inference_hwmm_layer4_weights_layer4_weights_V_rom_U' of component 'nn_inference_hwmm_layer4_weights_layer4_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer4_weights_layer4_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:27]
+	Parameter DWIDTH bound to: 12 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 160 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer4_weights_layer4_weights_V_rom' (19#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer4_weights_layer4_weights_V' (20#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd:149]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U43' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:354]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1_Multiplier_2' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:10' bound to instance 'nn_inference_mul_12s_32s_40_1_1_Multiplier_2_U' of component 'nn_inference_mul_12s_32s_40_1_1_Multiplier_2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_12s_32s_40_1_1_Multiplier_2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_12s_32s_40_1_1_Multiplier_2' (21#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_12s_32s_40_1_1' (22#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U44' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:366]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U45' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:378]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U46' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:390]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U47' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:402]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U48' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:414]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U49' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:426]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 12 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_12s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd:28' bound to instance 'mul_12s_32s_40_1_1_U50' of component 'nn_inference_mul_12s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:438]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer4' (23#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd:33]
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer2' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:12' bound to instance 'grp_hwmm_layer2_fu_335' of component 'nn_inference_hwmm_layer2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer2' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:33]
+	Parameter DataWidth bound to: 11 - type: integer 
+	Parameter AddressRange bound to: 2048 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer2_weights_layer2_weights_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:757' bound to instance 'weights_layer2_weights_V_U' of component 'nn_inference_hwmm_layer2_weights_layer2_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer2_weights_layer2_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:773]
+	Parameter DataWidth bound to: 11 - type: integer 
+	Parameter AddressRange bound to: 2048 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer2_weights_layer2_weights_V_rom' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:9' bound to instance 'nn_inference_hwmm_layer2_weights_layer2_weights_V_rom_U' of component 'nn_inference_hwmm_layer2_weights_layer2_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:788]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer2_weights_layer2_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:27]
+	Parameter DWIDTH bound to: 11 - type: integer 
+	Parameter AWIDTH bound to: 11 - type: integer 
+	Parameter MEM_SIZE bound to: 2048 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer2_weights_layer2_weights_V_rom' (24#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer2_weights_layer2_weights_V' (25#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd:773]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U16' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:317]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1_Multiplier_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:10' bound to instance 'nn_inference_mul_11s_32s_40_1_1_Multiplier_1_U' of component 'nn_inference_mul_11s_32s_40_1_1_Multiplier_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_mul_11s_32s_40_1_1_Multiplier_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_11s_32s_40_1_1_Multiplier_1' (26#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_mul_11s_32s_40_1_1' (27#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:41]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U17' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:329]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U18' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:341]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U19' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:353]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U20' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:365]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U21' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:377]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U22' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:389]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U23' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:401]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer2' (28#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd:33]
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer3' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:12' bound to instance 'grp_hwmm_layer3_fu_343' of component 'nn_inference_hwmm_layer3' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:929]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer3' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:33]
+	Parameter DataWidth bound to: 11 - type: integer 
+	Parameter AddressRange bound to: 512 - type: integer 
+	Parameter AddressWidth bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer3_weights_layer3_weights_V' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:250' bound to instance 'weights_layer3_weights_V_U' of component 'nn_inference_hwmm_layer3_weights_layer3_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer3_weights_layer3_weights_V' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:266]
+	Parameter DataWidth bound to: 11 - type: integer 
+	Parameter AddressRange bound to: 512 - type: integer 
+	Parameter AddressWidth bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_hwmm_layer3_weights_layer3_weights_V_rom' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:9' bound to instance 'nn_inference_hwmm_layer3_weights_layer3_weights_V_rom_U' of component 'nn_inference_hwmm_layer3_weights_layer3_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:281]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_hwmm_layer3_weights_layer3_weights_V_rom' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:27]
+	Parameter DWIDTH bound to: 11 - type: integer 
+	Parameter AWIDTH bound to: 9 - type: integer 
+	Parameter MEM_SIZE bound to: 512 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer3_weights_layer3_weights_V_rom' (29#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer3_weights_layer3_weights_V' (30#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd:266]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U30' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:317]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U31' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:329]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U32' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:341]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U33' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:353]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U34' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:365]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U35' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:377]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U36' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:389]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 11 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_mul_11s_32s_40_1_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd:28' bound to instance 'mul_11s_32s_40_1_1_U37' of component 'nn_inference_mul_11s_32s_40_1_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:401]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_hwmm_layer3' (31#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd:33]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_fpext_32ns_64_2_no_dsp_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fpext_32ns_64_2_no_dsp_1.vhd:8' bound to instance 'fpext_32ns_64_2_no_dsp_1_U55' of component 'nn_inference_fpext_32ns_64_2_no_dsp_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:948]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_fpext_32ns_64_2_no_dsp_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fpext_32ns_64_2_no_dsp_1.vhd:24]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_ap_fpext_0_no_dsp_32' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_fpext_0_no_dsp_32.v:60' bound to instance 'nn_inference_ap_fpext_0_no_dsp_32_u' of component 'nn_inference_ap_fpext_0_no_dsp_32' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fpext_32ns_64_2_no_dsp_1.vhd:45]
+INFO: [Synth 8-6157] synthesizing module 'nn_inference_ap_fpext_0_no_dsp_32' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_fpext_0_no_dsp_32.v:60]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (32#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
+INFO: [Synth 8-6155] done synthesizing module 'nn_inference_ap_fpext_0_no_dsp_32' (44#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_fpext_0_no_dsp_32.v:60]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_fpext_32ns_64_2_no_dsp_1' (45#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fpext_32ns_64_2_no_dsp_1.vhd:24]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 64 - type: integer 
+	Parameter din1_WIDTH bound to: 64 - type: integer 
+	Parameter dout_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1.vhd:8' bound to instance 'dcmp_64ns_64ns_1_2_no_dsp_1_U56' of component 'nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:961]
+INFO: [Synth 8-638] synthesizing module 'nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1.vhd:27]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 64 - type: integer 
+	Parameter din1_WIDTH bound to: 64 - type: integer 
+	Parameter dout_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'nn_inference_ap_dcmp_0_no_dsp_64' declared at '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_dcmp_0_no_dsp_64.v:60' bound to instance 'nn_inference_ap_dcmp_0_no_dsp_64_u' of component 'nn_inference_ap_dcmp_0_no_dsp_64' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1.vhd:75]
+INFO: [Synth 8-6157] synthesizing module 'nn_inference_ap_dcmp_0_no_dsp_64' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_dcmp_0_no_dsp_64.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'nn_inference_ap_dcmp_0_no_dsp_64' (50#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/ip/nn_inference_ap_dcmp_0_no_dsp_64.v:60]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1' (51#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'nn_inference' (52#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'u96v2_sbc_mp4d_nn_inference_0_1' (53#1) [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_inference_0_1/synth/u96v2_sbc_mp4d_nn_inference_0_1.vhd:71]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 2850.336 ; gain = 172.812 ; free physical = 2061 ; free virtual = 12826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2859.242 ; gain = 181.719 ; free physical = 2041 ; free virtual = 12810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 2859.242 ; gain = 181.719 ; free physical = 2041 ; free virtual = 12810
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2879.117 ; gain = 0.000 ; free physical = 1933 ; free virtual = 12730
+INFO: [Netlist 29-17] Analyzing 84 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_inference_0_1/constraints/nn_inference_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_inference_0_1/constraints/nn_inference_ooc.xdc] for cell 'U0'
+Parsing XDC File [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.runs/u96v2_sbc_mp4d_nn_inference_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.runs/u96v2_sbc_mp4d_nn_inference_0_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3029.961 ; gain = 0.000 ; free physical = 1403 ; free virtual = 12240
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.10 . Memory (MB): peak = 3029.961 ; gain = 0.000 ; free physical = 1394 ; free virtual = 12231
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 3029.961 ; gain = 352.438 ; free physical = 1144 ; free virtual = 11985
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 3029.961 ; gain = 352.438 ; free physical = 1143 ; free virtual = 11984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.runs/u96v2_sbc_mp4d_nn_inference_0_1_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 3029.961 ; gain = 352.438 ; free physical = 1139 ; free virtual = 11980
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-6904] The RAM "nn_inference_fp_input_img_V_ram:/ram_reg" of size (depth=100 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"nn_inference_temp_output_0_V_ram:/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "nn_inference_temp_output_0_V_ram:/ram_reg"
+INFO: [Synth 8-3971] The signal "nn_inference_temp_output_0_V_ram:/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"nn_inference_temp_output2_0_V_ram:/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "nn_inference_temp_output2_0_V_ram:/ram_reg"
+INFO: [Synth 8-3971] The signal "nn_inference_temp_output2_0_V_ram:/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"nn_inference_temp_output3_0_V_ram:/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "nn_inference_temp_output3_0_V_ram:/ram_reg"
+INFO: [Synth 8-3971] The signal "nn_inference_temp_output3_0_V_ram:/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-6904] The RAM "nn_inference_temp_output4_0_V_ram:/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-327] inferring latch for variable 'grp_fu_880_p0_reg' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:971]
+WARNING: [Synth 8-327] inferring latch for variable 'grp_fu_880_p1_reg' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:972]
+WARNING: [Synth 8-327] inferring latch for variable 'grp_fu_880_opcode_reg' [/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd:974]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 3029.961 ; gain = 352.438 ; free physical = 907 ; free virtual = 11758
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U1' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U3'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U1' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U5'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U1' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U7'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U2' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U4'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U2' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U6'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U2' (nn_inference_mul_10s_32s_40_1_1) to 'U0/grp_hwmm_layer1_fu_319/mul_10s_32s_40_1_1_U8'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U43' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U45'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U43' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U47'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U43' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U49'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U44' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U46'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U44' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U48'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U44' (nn_inference_mul_12s_32s_40_1_1) to 'U0/grp_hwmm_layer4_fu_327/mul_12s_32s_40_1_1_U50'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U16' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U18'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U16' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U20'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U16' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U22'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U17' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U19'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U17' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U21'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U17' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer2_fu_335/mul_11s_32s_40_1_1_U23'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U30' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U32'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U30' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U34'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U30' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U36'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U31' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U33'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U31' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U35'
+INFO: [Synth 8-223] decloning instance 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U31' (nn_inference_mul_11s_32s_40_1_1) to 'U0/grp_hwmm_layer3_fu_343/mul_11s_32s_40_1_1_U37'
+INFO: [Synth 8-223] decloning instance 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized2) to 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO'
+INFO: [Synth 8-223] decloning instance 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized2) to 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized2) to 'U0/fpext_32ns_64_2_no_dsp_1_U55/nn_inference_ap_fpext_0_no_dsp_32_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized2) to 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized2) to 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_UNDERFLOW'
+INFO: [Synth 8-223] decloning instance 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized2) to 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized2) to 'U0/dcmp_64ns_64ns_1_2_no_dsp_1_U56/nn_inference_ap_dcmp_0_no_dsp_64_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "U0/fp_input_img_V_U/nn_inference_fp_input_img_V_ram_U/ram_reg" of size (depth=100 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "U0/temp_output4_0_V_U/nn_inference_temp_output4_0_V_ram_U/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"U0/temp_output_0_V_U/nn_inference_temp_output_0_V_ram_U/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "U0/temp_output_0_V_U/nn_inference_temp_output_0_V_ram_U/ram_reg"
+INFO: [Synth 8-3971] The signal "U0/temp_output_0_V_U/nn_inference_temp_output_0_V_ram_U/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"U0/temp_output2_0_V_U/nn_inference_temp_output2_0_V_ram_U/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "U0/temp_output2_0_V_U/nn_inference_temp_output2_0_V_ram_U/ram_reg"
+INFO: [Synth 8-3971] The signal "U0/temp_output2_0_V_U/nn_inference_temp_output2_0_V_ram_U/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"U0/temp_output3_0_V_U/nn_inference_temp_output3_0_V_ram_U/ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "U0/temp_output3_0_V_U/nn_inference_temp_output3_0_V_ram_U/ram_reg"
+INFO: [Synth 8-3971] The signal "U0/temp_output3_0_V_U/nn_inference_temp_output3_0_V_ram_U/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-6904] The RAM "U0/fp_input_img_V_U/nn_inference_fp_input_img_V_ram_U/ram_reg" of size (depth=100 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "U0/temp_output4_0_V_U/nn_inference_temp_output4_0_V_ram_U/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:02:16 . Memory (MB): peak = 3173.961 ; gain = 496.438 ; free physical = 3253 ; free virtual = 17150
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:01 ; elapsed = 00:02:50 . Memory (MB): peak = 3386.352 ; gain = 708.828 ; free physical = 2650 ; free virtual = 16600
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:05 ; elapsed = 00:02:54 . Memory (MB): peak = 3433.391 ; gain = 755.867 ; free physical = 2603 ; free virtual = 16554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output_0_V_U/nn_inference_temp_output_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output_0_V_U/nn_inference_temp_output_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output2_0_V_U/nn_inference_temp_output2_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output2_0_V_U/nn_inference_temp_output2_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output3_0_V_U/nn_inference_temp_output3_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/temp_output3_0_V_U/nn_inference_temp_output3_0_V_ram_U/ram_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_hwmm_layer4_fu_327/weights_layer4_weights_V_U/nn_inference_hwmm_layer4_weights_layer4_weights_V_rom_U/q1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:11 ; elapsed = 00:03:01 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2590 ; free virtual = 16543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:15 ; elapsed = 00:03:04 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:15 ; elapsed = 00:03:04 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:16 ; elapsed = 00:03:05 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:16 ; elapsed = 00:03:05 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:16 ; elapsed = 00:03:06 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:16 ; elapsed = 00:03:06 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |CARRY8          |   240|
+|2     |DSP_ALU         |    16|
+|3     |DSP_A_B_DATA    |    16|
+|5     |DSP_C_DATA      |    16|
+|6     |DSP_MULTIPLIER  |    16|
+|7     |DSP_M_DATA      |    16|
+|8     |DSP_OUTPUT      |    16|
+|9     |DSP_PREADD      |    16|
+|10    |DSP_PREADD_DATA |    16|
+|11    |LUT1            |   416|
+|12    |LUT2            |  1567|
+|13    |LUT3            |   537|
+|14    |LUT4            |   612|
+|15    |LUT5            |  1344|
+|16    |LUT6            |  4217|
+|17    |MUXCY           |    84|
+|18    |MUXF7           |   723|
+|19    |MUXF8           |   274|
+|20    |RAM16X1D        |    64|
+|21    |RAM32X1D        |    32|
+|22    |RAM64X1D        |    32|
+|23    |RAMB18E2        |     1|
+|24    |RAMB36E2        |     3|
+|25    |FDRE            |  2631|
+|26    |FDSE            |    31|
+|27    |LD              |    61|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:16 ; elapsed = 00:03:06 . Memory (MB): peak = 3537.398 ; gain = 859.875 ; free physical = 2587 ; free virtual = 16541
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:10 ; elapsed = 00:02:57 . Memory (MB): peak = 3537.398 ; gain = 689.156 ; free physical = 2614 ; free virtual = 16579
+Synthesis Optimization Complete : Time (s): cpu = 00:02:16 ; elapsed = 00:03:06 . Memory (MB): peak = 3537.406 ; gain = 859.875 ; free physical = 2614 ; free virtual = 16579
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3537.406 ; gain = 0.000 ; free physical = 2703 ; free virtual = 16669
+INFO: [Netlist 29-17] Analyzing 1526 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3569.414 ; gain = 0.000 ; free physical = 2651 ; free virtual = 16618
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 218 instances were transformed.
+  (CARRY4) => CARRY8: 13 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 16 instances
+  LD => LDCE: 61 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 64 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 32 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+237 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:30 ; elapsed = 00:03:25 . Memory (MB): peak = 3569.414 ; gain = 1210.289 ; free physical = 2812 ; free virtual = 16779
+INFO: [Common 17-1381] The checkpoint '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.runs/u96v2_sbc_mp4d_nn_inference_0_1_synth_1/u96v2_sbc_mp4d_nn_inference_0_1.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP u96v2_sbc_mp4d_nn_inference_0_1, cache-ID = 01fd13e1c67589c9
+INFO: [Coretcl 2-1174] Renamed 64 cell refs.
+INFO: [Common 17-1381] The checkpoint '/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.runs/u96v2_sbc_mp4d_nn_inference_0_1_synth_1/u96v2_sbc_mp4d_nn_inference_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file u96v2_sbc_mp4d_nn_inference_0_1_utilization_synth.rpt -pb u96v2_sbc_mp4d_nn_inference_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 19 15:30:38 2024...

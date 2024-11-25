@@ -1,0 +1,111 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Nov 12 15:03:02 2024
+# Process ID: 9813
+# Current directory: /tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2
+# Command line: vivado u96v2_sbc_mp4d.xpr
+# Log file: /tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/vivado.log
+# Journal file: /tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project u96v2_sbc_mp4d.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/tools/Xilinx/MPSoC4Drones/hdl/projects/u96v2_sbc_mp4d_2020_2/u96v2_sbc_mp4d.srcs/sources_1/bd/u96v2_sbc_mp4d/u96v2_sbc_mp4d.bd}
+regenerate_bd_layout -routing
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets axi_dma_0_mm2s_introut] [get_bd_intf_nets axi_smc_M02_AXI] [get_bd_intf_nets axi_dma_0_M_AXI_MM2S] [get_bd_intf_nets axi_dma_0_M_AXI_S2MM] [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S] [get_bd_cells axi_dma_0]
+delete_bd_objs [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_nets axi_intc_0_irq] [get_bd_nets xlconstant_0_dout] [get_bd_cells axi_intc_0]
+delete_bd_objs [get_bd_cells xlconstant_0]
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1} CONFIG.NUM_SI {1}] [get_bd_cells axi_smc]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+set_property location {3.5 1466 56} [get_bd_cells axi_bram_ctrl_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "Auto" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "Auto" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_bram_ctrl_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+endgroup
+connect_bd_net [get_bd_pins axi_bram_ctrl_0_bram/clkb] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property location {3 1083 267} [get_bd_cells xlconstant_0]
+connect_bd_net [get_bd_pins axi_bram_ctrl_0_bram/enb] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins axi_bram_ctrl_0_bram/rstb] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
+delete_bd_objs [get_bd_nets zynq_ultra_ps_e_0_pl_resetn0]
+undo
+delete_bd_objs [get_bd_nets zynq_ultra_ps_e_0_pl_resetn0]
+connect_bd_net [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0] [get_bd_pins rst_ps8_0_100M/ext_reset_in]
+connect_bd_net [get_bd_pins axi_bram_ctrl_0_bram/rstb] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
+endgroup
+set_property location {3 1071 363} [get_bd_cells xlconstant_1]
+set_property -dict [list CONFIG.CONST_WIDTH {4} CONFIG.CONST_VAL {b1111}] [get_bd_cells xlconstant_1]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins axi_bram_ctrl_0_bram/web]
+regenerate_bd_layout
+delete_bd_objs [get_bd_intf_nets axi_smc_M00_AXI]
+startgroup
+set_property -dict [list CONFIG.PSU__USE__S_AXI_GP2 {0}] [get_bd_cells zynq_ultra_ps_e_0]
+endgroup
+delete_bd_objs [get_bd_nets xlconcat_0_dout] [get_bd_cells xlconcat_0]
+regenerate_bd_layout
+startgroup
+endgroup
+validate_bd_design
+import_files -norecurse {/home/nicklas/Documents/DAS_kandidate/Embedded_Systems/Blok2_UART/Exercise2_UART.srcs/sources_1/imports/UART_files/tx_mod_fsm.vhd /home/nicklas/Documents/DAS_kandidate/Embedded_Systems/Blok2_UART/Exercise2_UART.srcs/sources_1/imports/UART_files/rx_mod_rtl.vhd /home/nicklas/Documents/DAS_kandidate/Embedded_Systems/Blok2_UART/Exercise2_UART.srcs/sources_1/imports/UART_files/clk_divider.vhd}
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference clk_divider clk_divider_0
+create_bd_cell -type module -reference rx_mod rx_mod_0
+create_bd_cell -type module -reference tx_mod tx_mod_0
+connect_bd_net [get_bd_pins clk_divider_0/clk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+connect_bd_net [get_bd_pins clk_divider_0/rst] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins rx_mod_0/clk] [get_bd_pins clk_divider_0/clk_div]
+startgroup
+connect_bd_net [get_bd_pins tx_mod_0/rst] [get_bd_pins tx_mod_0/clkfast]
+endgroup
+delete_bd_objs [get_bd_nets Net]
+connect_bd_net [get_bd_pins tx_mod_0/clkfast] [get_bd_pins clk_divider_0/clk_div]
+connect_bd_net [get_bd_pins rx_mod_0/rst] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins tx_mod_0/rst] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+startgroup
+connect_bd_net [get_bd_pins rx_mod_0/data_out] [get_bd_pins tx_mod_0/data_in]
+endgroup
+connect_bd_net [get_bd_pins rx_mod_0/intr] [get_bd_pins tx_mod_0/shift_load]
+startgroup
+make_bd_pins_external  [get_bd_pins rx_mod_0/sin]
+endgroup
+startgroup
+endgroup
+startgroup
+endgroup
+delete_bd_objs [get_bd_nets rx_mod_0_data_out] [get_bd_nets rx_mod_0_intr] [get_bd_cells tx_mod_0]
+delete_bd_objs [get_bd_nets clk_divider_0_clk_div] [get_bd_nets sin_0_1] [get_bd_cells rx_mod_0]
+delete_bd_objs [get_bd_cells clk_divider_0]
+delete_bd_objs [get_bd_ports sin_0]
+validate_bd_design
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTB]
+startgroup
+set_property -dict [list CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_ctrl_0]
+endgroup
+set_property location {4 1405 223} [get_bd_cells axi_bram_ctrl_0_bram]
+set_property offset 0x00A0000000 [get_bd_addr_segs {zynq_ultra_ps_e_0/Data/SEG_axi_bram_ctrl_0_Mem0}]
+set_property range 4K [get_bd_addr_segs {zynq_ultra_ps_e_0/Data/SEG_axi_bram_ctrl_0_Mem0}]
+set_property range 8K [get_bd_addr_segs {zynq_ultra_ps_e_0/Data/SEG_axi_bram_ctrl_0_Mem0}]
+set_property offset 0x00A0000000 [get_bd_addr_segs {zynq_ultra_ps_e_0/Data/SEG_axi_bram_ctrl_0_Mem0}]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2
+endgroup
+set_property location {2 815 304} [get_bd_cells xlconstant_2]
+set_property -dict [list CONFIG.CONST_WIDTH {39} CONFIG.CONST_VAL {0x00A0000000}] [get_bd_cells xlconstant_2]
+set_property -dict [list CONFIG.CONST_WIDTH {40}] [get_bd_cells xlconstant_2]
+set_property -dict [list CONFIG.CONST_WIDTH {32} CONFIG.CONST_VAL {0xA0000000}] [get_bd_cells xlconstant_2]
+connect_bd_net [get_bd_pins xlconstant_2/dout] [get_bd_pins axi_bram_ctrl_0_bram/dinb]
+set_property location {2 815 248} [get_bd_cells xlconstant_2]
+save_bd_design

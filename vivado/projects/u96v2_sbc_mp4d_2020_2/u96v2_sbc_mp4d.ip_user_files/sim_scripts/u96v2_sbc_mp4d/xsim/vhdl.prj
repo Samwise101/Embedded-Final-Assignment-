@@ -1,0 +1,32 @@
+vhdl xil_defaultlib  \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_axi_smc_0/bd_0/ip/ip_1/sim/bd_53ee_psr_aclk_0.vhd" \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_rst_ps8_0_100M_0/sim/u96v2_sbc_mp4d_rst_ps8_0_100M_0.vhd" \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_axi_bram_ctrl_0_0/sim/u96v2_sbc_mp4d_axi_bram_ctrl_0_0.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_dcmp_64ns_64ns_1_2_no_dsp_1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fp_input_img_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_fpext_32ns_64_2_no_dsp_1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer2.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hw_act_layer3.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer1_weights_layer1_weights_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer2_weights_layer2_weights_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer3_weights_layer3_weights_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_hwmm_layer4_weights_layer4_weights_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_10s_32s_40_1_1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_11s_32s_40_1_1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_mul_12s_32s_40_1_1.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output2_0_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output3_0_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output4_0_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference_temp_output_0_V.vhd" \
+"../../../../u96v2_sbc_mp4d.gen/sources_1/bd/u96v2_sbc_mp4d/ipshared/91d3/hdl/vhdl/nn_inference.vhd" \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_nn_ctrl_0_0/sim/u96v2_sbc_mp4d_nn_ctrl_0_0.vhd" \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_fix_address_0_0/sim/u96v2_sbc_mp4d_fix_address_0_0.vhd" \
+"../../../bd/u96v2_sbc_mp4d/ip/u96v2_sbc_mp4d_not_gate_0_0/sim/u96v2_sbc_mp4d_not_gate_0_0.vhd" \
+"../../../bd/u96v2_sbc_mp4d/sim/u96v2_sbc_mp4d.vhd" \
+
+nosort
