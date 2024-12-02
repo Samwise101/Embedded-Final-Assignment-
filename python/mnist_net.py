@@ -4,163 +4,180 @@ import matplotlib.pyplot as plt
 import os
 import time
 import tensorflow as tf
-# from tensorflow.python.keras.models import Sequential
-# from tensorflow.python.keras.layers import Flatten
-# from tensorflow.python.keras.layers import Dense
-# from tensorflow.python.keras.layers import Activation
-
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten, Dense, Activation
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Activation
 import random
-
-print("Starting import")
 from sklearn.utils import shuffle
-print("Import successful")
-import sys
-
 from sklearn.datasets import load_digits
-digits=load_digits()
 
+digits = load_digits()
+
+def save_to_txt(model):
+    wt = open('weights_conv2d.csv', 'w')
+    bs = open('biases_conv2d.csv', 'w')
+    wt2 = open("weights_dense.csv", 'w')
+
+    for idx, layer in enumerate(model.layers):
+        if isinstance(layer, Conv2D):
+            weights = layer.get_weights()[0]  # Shape: (kernel_height, kernel_width, input_channels, output_channels)
+            biases = layer.get_weights()[1]   # Shape: (output_channels,)
+
+            # Save weights in the desired 3D matrix format
+            with open(f"conv2d_layer_{idx}_weights.txt", "w") as wt:
+                wt.write("{\n")
+                for out_channel in range(weights.shape[-1]):  # Iterate over output channels
+                    wt.write("  {\n")
+                    for in_channel in range(weights.shape[-2]):  # Iterate over input channels
+                        wt.write("    {")
+                        kernel = weights[:, :, in_channel, out_channel]  # 2D kernel for this in/out channel pair
+                        wt.write(', '.join(f"{val:.7f}" for row in kernel for val in row))
+                        wt.write("},\n" if in_channel != weights.shape[-2] - 1 else "}\n")
+                    wt.write("  },\n" if out_channel != weights.shape[-1] - 1 else "  }\n")
+                wt.write("}\n")
+
+            # Save biases
+            with open(f"conv2d_layer_{idx}_biases.txt", "w") as bs:
+                bs.write("{")
+                bs.write(', '.join(f"{val:.7f}" for val in biases))
+                bs.write("}\n")
+
+
+          
+
+
+def global_average_pooling(x):
+    # Assuming x has shape (batch_size, height, width, channels)
+    return np.mean(x, axis=(1, 2))  # Average over height and width
+    
 def main():
-	## Use CPU only
-	os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+    ## Use CPU only
+    os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-	## Load MNIST dataset
-	print("Loading dataset")
-	train_images = []
-	train_labels = []
-	test_images = []
-	test_labels = []
+    ## Load MNIST dataset
+    print("Loading dataset")
+    dims = (15, 15)  # dimensions of images to train/test with
+    fraction_test = 0.12
+    path = "archive/"
 
-	dims = (10,10) # dimensions of images to train/test with
-	fraction_test = 0.1
-	path = "mnist/MNIST_Dataset_JPG/"
+    # Initialize train and test datasets
+    x_train, y_train = [], []
+    x_test, y_test = [], []
 
-	# Initialize train and test datasets
-	for j in range(2): # train and test	
-		for i in range(10): # 0 to 9
-			if j == 0:
-				read_folder = path + '/MNIST_JPG_training/' + str(i) + '/'
-			if j == 1:
-				read_folder = path + '/MNIST_JPG_testing/' + str(i) + '/'
-			for filename in os.listdir(read_folder):
-				img = cv2.imread(os.path.join(read_folder,filename),0) # read img as grayscale
-				img = (255-img)
-				img = cv2.resize(img, dims, interpolation = cv2.INTER_AREA)	# resize img to fit dims
+    # Iterate through each class folder (assuming folders are named 1 to 9)
+    for i in range(1, 10):
+        print(f"Processing digit: {i}")
+        full_path = os.path.join(path, str(i))
+        images = []  # To store images temporarily
 
-				if img is not None:
-					if j == 0:
-						train_images.append(img / 255) # normalize pixel vals to be between 0 - 1
-						train_labels.append(i)
-					if j == 1:
-						test_images.append(img / 255)
-						test_labels.append(i)
+        # Read all images from the current folder
+        for filename in os.listdir(full_path):
+            img_path = os.path.join(full_path, filename)
+            img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+            img = cv2.resize(img, dims, interpolation=cv2.INTER_AREA)
+            images.append((img / 255.0, i))  # Normalize and store the label
 
-		# Shuffle and split into train and test
-		# random.shuffle(images)
-		# split_index = int(len(images) * fraction_test)
-		# test_samples = images[:split_index]
-		# train_samples = images[split_index:]
-		
-		# # Append to respective datasets
-		# x_test.extend([sample[0] for sample in test_samples])
-		# y_test.extend([sample[1] for sample in test_samples])
-		# x_train.extend([sample[0] for sample in train_samples])
-		# y_train.extend([sample[1] for sample in train_samples])
+        # Shuffle and split into train and test
+        random.shuffle(images)
+        split_index = int(len(images) * fraction_test)
+        test_samples = images[:split_index]
+        train_samples = images[split_index:]
 
-		# Verify dataset sizes
-		# print(f"Training samples: {len(x_train)}, Testing samples: {len(x_test)}")
+        # Append to respective datasets
+        x_test.extend([sample[0] for sample in test_samples])
+        y_test.extend([sample[1] for sample in test_samples])
+        x_train.extend([sample[0] for sample in train_samples])
+        y_train.extend([sample[1] for sample in train_samples])
 
-	## Convert to numpy arrays, flatten images - change dimensions from Nx10x10 to Nx100
-	train_images = np.asarray(train_images).astype('float32')
-	test_images = np.asarray(test_images).astype('float32')
-	train_labels = np.asarray(train_labels).astype('uint8')
-	test_labels = np.asarray(test_labels).astype('uint8')
+        # Verify dataset sizes
+        print(f"Training samples: {len(x_train)}, Testing samples: {len(x_test)}")
 
-	## Shuffle dataset
-	train_images, train_labels = shuffle(train_images, train_labels)
-	test_images, test_labels = shuffle(test_images, test_labels)
+    ## Convert to numpy arrays, reshape images
+    x_train = np.asarray(x_train).astype('float32').reshape(-1, dims[0], dims[1], 1)
+    x_test = np.asarray(x_test).astype('float32').reshape(-1, dims[0], dims[1], 1)
+    y_train = np.asarray(y_train).astype('uint8')
+    y_test = np.asarray(y_test).astype('uint8')
 
-	## Define network structure
-	model = Sequential([
-		Flatten(input_shape=dims),		# reshape 10x10 to 100, layer 0
+    ## Shuffle dataset
+    x_train, y_train = shuffle(x_train, y_train)
+    x_test, y_test = shuffle(x_test, y_test)
+
+    ## Define network structure
+    model = Sequential([
+		Flatten(input_shape=dims),		# reshape 15x15 to 225, layer 0
+		Dense(64, activation='relu', use_bias=False),	# dense layer 1
 		Dense(32, activation='relu', use_bias=False),	# dense layer 2
-		Dense(16, activation='relu', use_bias=False),	# dense layer 2
-		Dense(10, activation='softmax', use_bias=False),	# dense layer 3
+		Dense(16, activation='relu', use_bias=False),	# dense layer 3
+		Dense(10, activation='softmax', use_bias=False),	# dense layer 4
 	])
 
-	model.compile(optimizer='adam',
-				  loss='sparse_categorical_crossentropy',
-				  metrics=['accuracy'])
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
 
+    ## Train network  
+    model.fit(x_train, y_train, epochs=400, batch_size=128, validation_split=0.1)
 
-	## Train network  
-	model.fit(train_images, train_labels, epochs=300, batch_size=1000, validation_split = 0.1)
+    model.summary()
 
-	model.summary()
+    # Evaluate model
+    start_t = time.time()
+    results = model.evaluate(x_test, y_test, verbose=0)
+    totalt_t = time.time() - start_t
+    print("Inference time for ", len(x_test), " test images: ", totalt_t, " seconds")
+    print("Test loss, test accuracy: ", results)
+    
+    for w in range(1, len(model.layers)):
+        weight_filename = "layer_" + str(w) + "_weights.txt" 
+        open(weight_filename, 'w').close() # clear file
+        file = open(weight_filename,"a") 
+        file.write('{')
+        for i in range(model.layers[w].weights[0].numpy().shape[0]):
+            file.write('{')
+            for j in range(model.layers[w].weights[0].numpy().shape[1]):
+                file.write(str(model.layers[w].weights[0].numpy()[i][j]))
+                if j != model.layers[w].weights[0].numpy().shape[1]-1:
+                    file.write(', ')
+            file.write('}')
+            if i != model.layers[w].weights[0].numpy().shape[0]-1:
+                file.write(', \n')
+        file.write('}')
+        file.close()
 
-	start_t = time.time()
-	results = model.evaluate(test_images, test_labels, verbose=0)
-	totalt_t = time.time() - start_t
-	print("Inference time for ", len(test_images), " test image: " , totalt_t, " seconds")
-
-
-	print("test loss, test acc: ", results)
-
-	## Retrieve network weights after training. Skip layer 0 (input layer)
-	for w in range(1, len(model.layers)):
-		weight_filename = "layer_" + str(w) + "_weights.txt" 
-		open(weight_filename, 'w').close() # clear file
-		file = open(weight_filename,"a") 
-		file.write('{')
-		for i in range(model.layers[w].weights[0].numpy().shape[0]):
-			file.write('{')
-			for j in range(model.layers[w].weights[0].numpy().shape[1]):
-				file.write(str(model.layers[w].weights[0].numpy()[i][j]))
-				if j != model.layers[w].weights[0].numpy().shape[1]-1:
-					file.write(', ')
-			file.write('}')
-			if i != model.layers[w].weights[0].numpy().shape[0]-1:
-				file.write(', \n')
-		file.write('}')
-		file.close()
-
-	network_weights = model.layers[1].weights
+    network_weights = model.layers[1].weights
 	#print(network_weights)
-	layer_1_W = network_weights[0].numpy()
+    layer_1_W = network_weights[0].numpy()
 	#print(layer_1_W)
+    
+#  # Extract kernel values (weights) of Conv2D layer
+#     conv_layer = model.layers[0]  # First layer is Conv2D
+#     conv_kernels = conv_layer.get_weights()[0]  # The kernels are stored in the first element
+#     conv_biases = conv_layer.get_weights()[1]   # Biases
+#     kernel_size = conv_layer.kernel_size
+#     stride = conv_layer.strides
+#     padding = conv_layer.padding
+#     print("Convolution kernel size:", kernel_size)
+#     print("Stride:", stride)
+#     print("Padding:", padding)
 
-	print("test_image[0] label: ", test_labels[0])
-	x = test_images[0]
-	plt.imshow(test_images[0])
-	x = np.expand_dims(x, axis=0)
-	print("NN Prediction: ", np.argmax(model.predict(x)))
-	plt.imshow(test_images[0], cmap="gray")
-	plt.show()
+#     # Extract weights and biases of Dense layer
+#     dense_layer = model.layers[3]  # Dense layer
+#     dense_weights = dense_layer.get_weights()
+#     print("Dense weights:", [dense_weights])
 
-	print("test_image[0] label: ", test_labels[100])
-	x = test_images[100]
-	plt.imshow(test_images[100])
-	x = np.expand_dims(x, axis=0)
-	print("NN Prediction: ", np.argmax(model.predict(x)))
-	plt.imshow(test_images[100], cmap="gray")
-	plt.show()
+    # Save Dense layer data to txt files
+    save_to_txt(model)
 
-	print("Finished")
-	# Save the model to an HDF5 file
-	model.save("trained_model_mnist.h5")
+    # Save the model to an HDF5 file
+    model.save("trained_model_conv_30x30.h5")
 
-	for i in range(1,10):
-		path = "test/" + str(i) + "/"
-		for filename in os.listdir(path):
-			img = cv2.imread(os.path.join(path, filename),0)
-			img = cv2.resize(img, dims, interpolation=cv2.INTER_AREA) / 255
-			x = img
-			x = np.expand_dims(x, axis=0)
-			print("test_image label: ", i)
-			print("NN prediction: ", np.argmax(model.predict(x)))
-			plt.imshow(img, cmap="gray")
-			plt.show()
+    ## Visualize some predictions
+    for idx in [0, 100]:
+        print(f"Test image[{idx}] label: ", y_test[idx])
+        x = x_test[idx]
+        plt.imshow(x.squeeze(), cmap="gray")
+        x = np.expand_dims(x, axis=0)
+        print("NN Prediction: ", np.argmax(model.predict(x)))
+        plt.show()
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()

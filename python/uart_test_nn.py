@@ -7,15 +7,12 @@ import struct
 import time
 import sys
 def main():
-	args = sys.argv[1:]
-	if len(args) == 2 and args[0] == '-port':
-		port = str(args[1])	
-
+	port = "/dev/ttyUSB1"	
 
 	dims = (10,10) # dimensions of images to train/test with
 
 	randomint = random.randrange(10)
-	read_dir = os.path.expanduser("~") + '/Downloads/MNIST_Dataset_JPG/MNIST_JPG_testing/' + str(randomint) + '/'
+	read_dir = "archive/" + str(randomint) + '/'
 	read_file = random.choice(os.listdir(read_dir)) # choose random test image
 	img = cv2.imread(os.path.join(read_dir,read_file),0) # read img as grayscale
 	img = cv2.resize(img, dims, interpolation = cv2.INTER_AREA)	# resize img to fit dims
@@ -27,7 +24,7 @@ def main():
 	for i in range(dims[1]):
 		for j in range(dims[0]):
 			values = bytearray(struct.pack("f", img[i][j])) # turn pixel values into bytearray
-			#print(values)
+			# print(values)
 			#time.sleep(0.01)
 			ser.write(values) # send bytearray over UART
 
