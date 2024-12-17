@@ -11,12 +11,17 @@
 #include <iostream>
 #include <stdint.h>
 #include "drivers/bram_uio.h"
+#include <cstdlib>  // For system()
+#include <string>   // For string manipulation
+
 
 #define IMAGE_ROW 15
 #define DATA_SIZE IMAGE_ROW*IMAGE_ROW
 
 // #define BRAM_BASE_ADDR 0xA0000000U
 // #define BRAM_SIZE 4                 // 32 bits
+
+void send_position_command(int position);
 
 class ImageSubscriber : public rclcpp::Node
 {
@@ -28,7 +33,7 @@ public:
 
 private:
 	void onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg);
-	void flattenImage(cv::Mat& inputImage, float* image_flat);
+	void flattenImage(cv::Mat& inputImage, uint8_t* image_flat);
 	uint32_t runNN(cv::Mat& inputImage);
 
 
@@ -39,4 +44,3 @@ public:
 
 private:
 };
-
