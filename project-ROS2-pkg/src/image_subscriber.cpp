@@ -39,22 +39,26 @@ ImageSubscriber::~ImageSubscriber()
 	RCLCPP_INFO(this->get_logger(), "Subscriber out");
 }
 
-void ImageSubscriber::flattenImage(cv::Mat& inputImage, uint8_t* image_flat) {
+void ImageSubscriber::flattenImage(cv::Mat& inputImage, float* image_flat) {
     try {
-        // Validate the input matrix dimensions
+
         if (inputImage.empty()) {
             throw std::runtime_error("Input image is empty.");
         }
         if (inputImage.rows != IMAGE_ROW || inputImage.cols != IMAGE_ROW) {
             throw std::invalid_argument("Input image dimensions do not match expected size.");
         }
+        if (inputImage.type() != CV_8U) { // Ensure the image is grayscale
+            throw std::invalid_argument("Input image must be of type CV_8U (grayscale).");
+        }
 
-        // Flatten the image and store each pixel as a byte
+
+        // Flatten the image and normalize pixel values to float
         int count = 0;
         for (int i = 0; i < IMAGE_ROW; i++) {
             for (int j = 0; j < IMAGE_ROW; j++) {
-                uint8_t pixel_value = inputImage.at<uint8_t>(i,j); // Get pixel value (byte)
-                image_flat[count] = pixel_value;
+                uint8_t pixel_value = inputImage.at<uint8_t>(i, j);
+                image_flat[count] = static_cast<float>(pixel_value) / 255.0f; // Normalize to [0, 1]
                 count++;
             }
         }
@@ -66,36 +70,64 @@ void ImageSubscriber::flattenImage(cv::Mat& inputImage, uint8_t* image_flat) {
 
 uint32_t ImageSubscriber::runNN(cv::Mat& inputImage) {
     try {
-        // Step 1: Flatten the image into a byte array
-        uint8_t flat_image[DATA_SIZE];
+        // Step 1: Flatten the image into a float array
+        float flat_image[DATA_SIZE];
         flattenImage(inputImage, flat_image);
 
-        // Step 2: Wait until the hardware accelerator is idle
-        while (!XNn_inference_IsIdle(&this->ip_inst)) {
-            std::cout << "Waiting for hardware to be idle..." << std::endl;
+        // Step 2: Check DATA_SIZE alignment
+        if (DATA_SIZE % sizeof(word_type) != 0) {
+            throw std::invalid_argument("DATA_SIZE is not aligned to the word size.");
         }
 
-        // Step 3: Write the flattened image data to hardware (as bytes)
-        std::cout << "Writing image data to hardware..." << std::endl;
-        XNn_inference_Write_input_img_Bytes(&this->ip_inst, 0, reinterpret_cast<char*>(flat_image), DATA_SIZE);
+        // Step 3: Wait until the hardware accelerator is idle with a timeout
+        const int timeout_ms = 5000; // Timeout in milliseconds
+        auto start_time = std::chrono::steady_clock::now();
 
-        // Step 4: Check if the hardware accelerator is ready and start it
+        while (!XNn_inference_IsIdle(&this->ip_inst)) {
+            auto current_time = std::chrono::steady_clock::now();
+            if (std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time).count() > timeout_ms) {
+                throw std::runtime_error("Timeout: Hardware did not become idle.");
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(10)); // Reduce CPU usage
+        }
+
+        // Step 4: Write the flattened image data to hardware as floats
+        std::cout << "Writing image data to hardware..." << std::endl;
+        XNn_inference_Write_input_img_Words(&this->ip_inst, 0, reinterpret_cast<word_type*>(flat_image), DATA_SIZE);
+
+        // Step 5: Check if the hardware accelerator is ready and start it
         if (XNn_inference_IsReady(&this->ip_inst)) {
             std::cout << "Starting inference..." << std::endl;
             XNn_inference_Start(&this->ip_inst);
+        } else {
+            throw std::runtime_error("Hardware is not ready for inference.");
         }
 
-        // Step 5: Wait until inference completes
+        // Step 6: Wait until inference completes with a timeout
+        start_time = std::chrono::steady_clock::now(); // Reset timeout timer
         while (!XNn_inference_IsIdle(&this->ip_inst)) {
-            std::cout << "Waiting for inference to complete..." << std::endl;
+            auto current_time = std::chrono::steady_clock::now();
+            if (std::chrono::duration_cast<std::chrono::milliseconds>(current_time - start_time).count() > timeout_ms) {
+                throw std::runtime_error("Timeout: Inference did not complete.");
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(10)); // Reduce CPU usage
         }
 
-        // Step 6: Read the result from BRAM
+        // Step 7: Read the result from BRAM
         BRAM bram_test(0, 4);
         uint32_t read_value = bram_test[0];
+        if (read_value == 0xFFFFFFFF) { // Check for invalid read
+            std::cerr << "Error: Read invalid value (0xFFFFFFFF) from BRAM!" << std::endl;
+            return -1; // Error code
+        }
+
         std::cout << "Read value from BRAM: 0x" << std::hex << read_value << std::endl;
 
         return read_value;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+        return -1; // Error code
     }
     catch (...) {
         std::cerr << "Unknown exception occurred!" << std::endl;
@@ -120,8 +152,9 @@ void ImageSubscriber::onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg) {
 	uint32_t prediction = runNN(resized);
 
  	std::cout << "Prediction = " << prediction << std::endl;
-    
-    send_position_command(prediction);  // Send initial position
+    std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Reduce CPU usage
+
+    // send_position_command(prediction);  // Send initial position
     
     // Publish the NN result directly to the 'set_position' topic
     RCLCPP_INFO(this->get_logger(), "Publishing to /set_position topic!");
