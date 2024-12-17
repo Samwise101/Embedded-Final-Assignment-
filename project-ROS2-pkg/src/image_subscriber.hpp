@@ -16,7 +16,9 @@
 
 
 #define IMAGE_ROW 15
-#define DATA_SIZE IMAGE_ROW*IMAGE_ROW
+#define DATA_SIZE ((IMAGE_ROW * IMAGE_ROW + 3) & ~3) // Align to the next multiple of 4
+
+// #define DATA_SIZE IMAGE_ROW*IMAGE_ROW
 
 // #define BRAM_BASE_ADDR 0xA0000000U
 // #define BRAM_SIZE 4                 // 32 bits
@@ -33,7 +35,7 @@ public:
 
 private:
 	void onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg);
-	void flattenImage(cv::Mat& inputImage, uint8_t* image_flat);
+	void flattenImage(cv::Mat& inputImage, float* image_flat);
 	uint32_t runNN(cv::Mat& inputImage);
 
 
