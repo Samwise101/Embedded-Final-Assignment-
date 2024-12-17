@@ -39,37 +39,70 @@ ImageSubscriber::~ImageSubscriber()
 	RCLCPP_INFO(this->get_logger(), "Subscriber out");
 }
 
-void ImageSubscriber::flattenImage(cv::Mat& inputImage, float* image_flat) {
+void ImageSubscriber::flattenImage(cv::Mat& inputImage, uint8_t* image_flat) {
+    try {
+        // Validate the input matrix dimensions
+        if (inputImage.empty()) {
+            throw std::runtime_error("Input image is empty.");
+        }
+        if (inputImage.rows != IMAGE_ROW || inputImage.cols != IMAGE_ROW) {
+            throw std::invalid_argument("Input image dimensions do not match expected size.");
+        }
 
-	int count = 0;
-	for(int i = 0; i < IMAGE_ROW; i++){
-		for(int j = 0; j < IMAGE_ROW; j++){
-			image_flat[count] = inputImage.at<uint8_t>(i,j)/255.0f;
-			count++;
-		}
-	}
+        // Flatten the image and store each pixel as a byte
+        int count = 0;
+        for (int i = 0; i < IMAGE_ROW; i++) {
+            for (int j = 0; j < IMAGE_ROW; j++) {
+                uint8_t pixel_value = inputImage.at<uint8_t>(i,j); // Get pixel value (byte)
+                image_flat[count] = pixel_value;
+                count++;
+            }
+        }
+    }
+    catch (...) {
+        std::cerr << "Unknown exception occurred in flattenImage!" << std::endl;
+    }
 }
 
 uint32_t ImageSubscriber::runNN(cv::Mat& inputImage) {
+    try {
+        // Step 1: Flatten the image into a byte array
+        uint8_t flat_image[DATA_SIZE];
+        flattenImage(inputImage, flat_image);
 
-	float flat_image[DATA_SIZE];
-	flattenImage(inputImage, flat_image);
+        // Step 2: Wait until the hardware accelerator is idle
+        while (!XNn_inference_IsIdle(&this->ip_inst)) {
+            std::cout << "Waiting for hardware to be idle..." << std::endl;
+        }
 
- 	while(!XNn_inference_IsIdle(&this->ip_inst));
+        // Step 3: Write the flattened image data to hardware (as bytes)
+        std::cout << "Writing image data to hardware..." << std::endl;
+        XNn_inference_Write_input_img_Bytes(&this->ip_inst, 0, reinterpret_cast<char*>(flat_image), DATA_SIZE);
 
-	XNn_inference_Write_input_img_Words(&this->ip_inst, 0, (word_type*)flat_image, DATA_SIZE/sizeof(word_type));
+        // Step 4: Check if the hardware accelerator is ready and start it
+        if (XNn_inference_IsReady(&this->ip_inst)) {
+            std::cout << "Starting inference..." << std::endl;
+            XNn_inference_Start(&this->ip_inst);
+        }
 
-	if(XNn_inference_IsReady(&this->ip_inst)){
-		XNn_inference_Start(&this->ip_inst);
-	}
-	
-	while(!XNn_inference_IsIdle(&this->ip_inst));
+        // Step 5: Wait until inference completes
+        while (!XNn_inference_IsIdle(&this->ip_inst)) {
+            std::cout << "Waiting for inference to complete..." << std::endl;
+        }
 
-	BRAM bram_test(0, 4);
-	uint32_t read_value = bram_test[0];
-	std::cout << "Read value: 0x" << std::hex << read_value << std::endl;
-	return read_value;
+        // Step 6: Read the result from BRAM
+        BRAM bram_test(0, 4);
+        uint32_t read_value = bram_test[0];
+        std::cout << "Read value from BRAM: 0x" << std::hex << read_value << std::endl;
+
+        return read_value;
+    }
+    catch (...) {
+        std::cerr << "Unknown exception occurred!" << std::endl;
+        return -1; // Error code
+    }
 }
+
 
 
 void ImageSubscriber::onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg) {
@@ -87,6 +120,13 @@ void ImageSubscriber::onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg) {
 	uint32_t prediction = runNN(resized);
 
  	std::cout << "Prediction = " << prediction << std::endl;
+    
+    send_position_command(prediction);  // Send initial position
+    
+    // Publish the NN result directly to the 'set_position' topic
+    RCLCPP_INFO(this->get_logger(), "Publishing to /set_position topic!");
+
+
 
 	RCLCPP_INFO(this->get_logger(), "Publishing to topic!");
 	sensor_msgs::msg::Image::SharedPtr img_msg = cv_bridge::CvImage(std_msgs::msg::Header(), "mono8", resized).toImageMsg();
@@ -94,12 +134,29 @@ void ImageSubscriber::onImageMsg(const sensor_msgs::msg::Image::SharedPtr msg) {
 
 }
 
+void send_position_command(int position)
+{
+    // Create the ROS 2 topic command with the dynamic position
+    std::string command = "ros2 topic pub -1 /set_position dynamixel_sdk_custom_interfaces/msg/SetPosition \"{id: 1, position: " + std::to_string(position) + "}\"";
+    // Execute the command
+    int result = std::system(command.c_str());
+    
+    // Check if the command was successful
+    if (result == 0)
+    {
+        std::cout << "Position command sent successfully with position: " << position << std::endl;
+    }
+    else
+    {
+        std::cerr << "Error executing the command." << std::endl;
+    }
+}
+
 int main(int argc, char *argv[])
 {
 	setvbuf(stdout,NULL,_IONBF,BUFSIZ);
 
 	std::cout << "Successfully initialized neural network kernel\n" << std::endl;
-
 
 	rclcpp::init(argc,argv);
 	// Initialize UART communication
