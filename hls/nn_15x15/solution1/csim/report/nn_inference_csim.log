@@ -1,8 +1,8 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../nn_tb.cpp in debug mode
-   Compiling ../../../nn.cpp in debug mode
    Generating csim.exe
+00000000000000000000000000000100
 
 NN Prediction: 4
 

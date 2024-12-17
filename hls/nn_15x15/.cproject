@@ -60,6 +60,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                     								
                                 </option>
                                 								
@@ -94,6 +96,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                     								
                                 </option>
                                 								
@@ -175,7 +179,7 @@
                                 								
                                 <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
                                 								
-                                <listOptionValue builtIn="false" value="/home/samuel"/>
+                                <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                 							
                             </option>
                             							
@@ -189,7 +193,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -258,6 +262,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                     								
                                 </option>
                                 								
@@ -282,6 +288,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                     								
                                 </option>
                                 								
@@ -353,7 +361,7 @@
                                 								
                                 <listOptionValue builtIn="false" value="/tools/Xilinx/Vitis_HLS/2020.2/include/etc"/>
                                 								
-                                <listOptionValue builtIn="false" value="/home/samuel"/>
+                                <listOptionValue builtIn="false" value="/home/samuel/Documents/Embedded-Final-Assignment-/hls"/>
                                 							
                             </option>
                             							
@@ -367,7 +375,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

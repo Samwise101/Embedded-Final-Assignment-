@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="nn.cpp" path="/home/samuel/nn_15x15/nn.cpp"/>
-    <originFiles name="nn.hpp" path="/home/samuel/nn_15x15/nn.hpp"/>
+    <originFiles name="nn.hpp" path="/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15/nn.hpp"/>
+    <originFiles name="nn.cpp" path="/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15/nn.cpp"/>
   </source>
   <testbench>
-    <originFiles name="nn_tb.cpp" path="/home/samuel/nn_15x15/nn_tb.cpp"/>
+    <originFiles name="nn_tb.cpp" path="/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15/nn_tb.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

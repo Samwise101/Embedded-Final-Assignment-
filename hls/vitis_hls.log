@@ -1,0 +1,40 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'samuel' on host 'samuel-ASUS-TUF-Gaming-A15-FA507NU-FA507NU' (Linux_x86_64 version 5.15.0-126-generic) on Mon Dec 16 16:57:54 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/samuel/Documents/Embedded-Final-Assignment-/hls'
+Sourcing Tcl script '/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project nn_15x15 
+INFO: [HLS 200-10] Opening project '/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15'.
+INFO: [HLS 200-1510] Running: set_top nn_inference 
+INFO: [HLS 200-1510] Running: add_files nn_15x15/nn.hpp 
+INFO: [HLS 200-10] Adding design file 'nn_15x15/nn.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files nn_15x15/nn.cpp 
+INFO: [HLS 200-10] Adding design file 'nn_15x15/nn.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb nn_15x15/nn_tb.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'nn_15x15/nn_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/samuel/Documents/Embedded-Final-Assignment-/hls/nn_15x15/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/samuel/MpSoc4Drones/ip/nn_inference_ap_vld_stream.zip
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=vhdl
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/samuel/MpSoc4Drones/ip/nn_inference_ap_vld_stream.zip -rtl vhdl 
+INFO: [HLS 200-1510] Running: set_directive_top -name nn_inference nn_inference 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../nn_tb.cpp in debug mode
+   Generating csim.exe
+00000000000000000000000000000100
+
+NN Prediction: 4
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.05 seconds. CPU system time: 0.58 seconds. Elapsed time: 4.13 seconds; current allocated memory: 93.390 MB.

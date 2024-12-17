@@ -2,6 +2,22 @@
 #include <iostream>
 #include "nn.hpp"
 
+void decimalToBinary(int n) {
+    // Handle 0 explicitly
+    if (n == 0) {
+        std::cout << "0";
+        return;
+    }
+
+    // Print binary representation
+    for (int i = 31; i >= 0; --i) {
+        int bit = (n >> i) & 1; // Extract the i-th bit
+        std::cout << bit;
+    }
+    std::cout << std::endl;
+}
+
+
 int main() {
 
 	volatile float input_img[n_inputs] = {0.949020,0.988235,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.988235,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.988235,0.996078,0.996078,0.996078,0.996078,0.996078,0.988235,0.956863,0.988235,0.996078,0.996078,0.996078,0.996078,0.996078,0.996078,0.992157,0.996078,0.996078,0.996078,0.996078,
@@ -13,6 +29,8 @@ int main() {
 	int temp_pred;
 
 	nn_inference(input_img,&pred);
+	decimalToBinary(pred);
+
 	std::cout << std::endl;
 
 	std::cout << "NN Prediction: " << pred << std::endl;

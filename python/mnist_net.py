@@ -57,7 +57,7 @@ def main():
     print("Loading dataset")
     dims = (15, 15)  # dimensions of images to train/test with
     fraction_test = 0.12
-    path = "archive/"
+    path = "datasets/archive"
 
     # Initialize train and test datasets
     x_train, y_train = [], []
@@ -74,7 +74,7 @@ def main():
             img_path = os.path.join(full_path, filename)
             img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
             img = cv2.resize(img, dims, interpolation=cv2.INTER_AREA)
-            images.append((img / 255.0, i))  # Normalize and store the label
+            images.append((img, i))  # Normalize and store the label
 
         # Shuffle and split into train and test
         random.shuffle(images)
@@ -92,8 +92,8 @@ def main():
         print(f"Training samples: {len(x_train)}, Testing samples: {len(x_test)}")
 
     ## Convert to numpy arrays, reshape images
-    x_train = np.asarray(x_train).astype('float32').reshape(-1, dims[0], dims[1], 1)
-    x_test = np.asarray(x_test).astype('float32').reshape(-1, dims[0], dims[1], 1)
+    x_train = np.asarray(x_train).astype('uint8').reshape(-1, dims[0], dims[1], 1)
+    x_test = np.asarray(x_test).astype('uint8').reshape(-1, dims[0], dims[1], 1)
     y_train = np.asarray(y_train).astype('uint8')
     y_test = np.asarray(y_test).astype('uint8')
 
@@ -148,22 +148,6 @@ def main():
     layer_1_W = network_weights[0].numpy()
 	#print(layer_1_W)
     
-#  # Extract kernel values (weights) of Conv2D layer
-#     conv_layer = model.layers[0]  # First layer is Conv2D
-#     conv_kernels = conv_layer.get_weights()[0]  # The kernels are stored in the first element
-#     conv_biases = conv_layer.get_weights()[1]   # Biases
-#     kernel_size = conv_layer.kernel_size
-#     stride = conv_layer.strides
-#     padding = conv_layer.padding
-#     print("Convolution kernel size:", kernel_size)
-#     print("Stride:", stride)
-#     print("Padding:", padding)
-
-#     # Extract weights and biases of Dense layer
-#     dense_layer = model.layers[3]  # Dense layer
-#     dense_weights = dense_layer.get_weights()
-#     print("Dense weights:", [dense_weights])
-
     # Save Dense layer data to txt files
     save_to_txt(model)
 

@@ -5,11 +5,6 @@
                 <option name="name" value="nn_inference"/>
             </pragma>
         </directive>
-        <directive functionName="nn_inference" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="nn_inference"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

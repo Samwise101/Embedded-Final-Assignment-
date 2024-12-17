@@ -6,8 +6,8 @@
     </Simulation>
     <files xmlns="">
         <file name="../nn_tb.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="nn_15x15/nn.hpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="nn_15x15/nn.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="nn_15x15/nn.hpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
