@@ -5,8 +5,8 @@
 ############################################################
 open_project nn_15x15
 set_top nn_inference
-add_files nn_15x15/nn.hpp
 add_files nn_15x15/nn.cpp
+add_files nn_15x15/nn.hpp
 add_files -tb nn_15x15/nn_tb.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xczu3eg-sbva484-1-e}
